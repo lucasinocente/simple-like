@@ -1,0 +1,4 @@
+runtime: nodejs10
+
+env_variables:
+  APP_URL: "https://simple-like.appspot.com"
