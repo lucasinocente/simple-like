@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Simple Like
 
 Um like bem simples e livres de cookies para ser usado no seu website.
@@ -65,3 +66,15 @@ Via CLI do Firebase:
 5) `firebase deploy`
 
 Use seu like livre de cookies.
+=======
+This component was bootstrapped with [Direflow](https://direflow.io).
+
+# Simple Like
+> This project is created using Direflow
+
+```html
+<simple-like></simple-like>
+```
+
+Use this README to describe your Direflow Component
+>>>>>>> 49879a6... WIP: remove old files and create base to load, add and show data
