@@ -2,10 +2,10 @@ import firebase from "firebase/app";
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "",
-  databaseURL: "https://simple-like-oss.firebaseio.com",
-  projectId: "simple-like-oss",
-  storageBucket: "simple-like-oss.appspot.com"
+  apiKey: process.env.REACT_APP_APIKEY,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET
 };
 
 firebase.initializeApp(firebaseConfig);
