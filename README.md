@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 75fe8fd... Configure and add docs to explain Firebase use
 # Simple Like
 
 Um like bem simples e livres de cookies para ser usado no seu website.
@@ -65,6 +68,7 @@ Via CLI do Firebase:
 4) Escolha seu projeto ou crie um novo
 5) `firebase deploy`
 
+<<<<<<< HEAD
 Use seu like livre de cookies.
 =======
 This component was bootstrapped with [Direflow](https://direflow.io).
@@ -98,3 +102,6 @@ npm install
 npm run
 ```
 >>>>>>> f25f251... Add infos, style and configuration to be shared
+=======
+Use seu like livre de cookies.
+>>>>>>> 75fe8fd... Configure and add docs to explain Firebase use

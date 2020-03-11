@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Leia o `README.md` na raíz do projeto.
 =======
 # Simple Like
@@ -53,3 +54,6 @@ Via CLI do Firebase:
 
 This component was bootstrapped with [Direflow](https://direflow.io).
 >>>>>>> b4205b3... Move folder to work better with firebase configuration
+=======
+Leia o `README.md` na raíz do projeto.
+>>>>>>> 75fe8fd... Configure and add docs to explain Firebase use
