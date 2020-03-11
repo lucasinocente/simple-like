@@ -1,0 +1,1 @@
+Leia o `README.md` na raíz do projeto.

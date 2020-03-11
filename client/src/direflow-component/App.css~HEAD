@@ -1,0 +1,56 @@
+.simple-like {
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+}
+
+.like {
+  cursor: pointer;
+  font-family: Helvetica, Arial, Sans-Serif;
+  border-radius: 50%;
+  padding: 15px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  box-sizing: content-box;
+  background-color: #fff;
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  color: #333;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.like span {
+  display: block;
+  font-size: 30px;
+  line-height: 20px;
+}
+
+.like .number {
+  position: relative;
+  z-index: 2;
+}
+
+.like:hover {
+  background: #f0f0f0;
+}
+
+.like:hover .number {
+  display: none;
+}
+
+.like:hover .claps {
+  font-size: 37px;
+  line-height: 35px;
+  margin-left: -3px;
+}
+
+.like:active .claps {
+  font-size: 37px;
+  line-height: 39px;
+  margin-left: -3px;
+}
