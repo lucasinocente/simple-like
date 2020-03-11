@@ -1,13 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { EventContext, Styled } from 'direflow-component';
+import React, { useState, useEffect } from 'react';
+import { Styled } from 'direflow-component';
 import database from '../firebase'
 
 import styles from './App.css';
 
 const buildUrl = ({ location }) => {
   const { host, pathname } = location;
-  console.log(location)
   const url = `${host}${pathname}`
   return url.replace('//', '-').replace('/', '-');
 }
@@ -22,16 +20,12 @@ const loadLikes = async (url, setLikes) => {
 }
 
 const addLike = async (url, count) => {
-  database.collection("likes").doc(url).set({ url, count }).then(function() {
-    console.log("Document successfully written!");
-  });
+  return database.collection("likes").doc(url).set({ url, count });
 }
 
-const App = (props) => {
-  // const dispatch = useContext(EventContext);
-  const url = buildUrl(window);
-
+const App = () => {
   const [likes, setLikes] = useState();
+  const url = buildUrl(window);
 
   useEffect( () => {
     loadLikes(url, setLikes);
@@ -41,29 +35,22 @@ const App = (props) => {
     const count = likes + 1;
     addLike(url, count);
     setLikes(count);
-    // const event = new Event('my-event');
-    // dispatch(event);
   };
 
   return (
     <Styled styles={styles}>
-      <div className="like" onClick={() => handleLike(url, likes)}>
+      <div className="simple-like">
         {
           likes && (
-            <>
+            <div className="like" onClick={() => handleLike(url, likes)}>
               <span className="number">{ likes }</span>
               <span role="img" aria-label="claps" className="claps">👏</span>
-            </>
+            </div>
           )
         }
       </div>
     </Styled>
   );
-};
-
-App.propTypes = {
-  sampleList: PropTypes.array,
-  componentTitle: PropTypes.string,
 };
 
 export default App;
