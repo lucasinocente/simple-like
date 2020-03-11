@@ -21,37 +21,41 @@ const loadLikes = async (url, setLikes) => {
   });
 }
 
-const addLike = async (url, likes) => {
-  database.collection("likes").doc(url).set({ url, count: 1 }).then(function() {
+const addLike = async (url, count) => {
+  database.collection("likes").doc(url).set({ url, count }).then(function() {
     console.log("Document successfully written!");
   });
 }
 
 const App = (props) => {
-  const dispatch = useContext(EventContext);
+  // const dispatch = useContext(EventContext);
   const url = buildUrl(window);
 
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState();
 
   useEffect( () => {
     loadLikes(url, setLikes);
-    // console.log(likes)
-  }, [likes, url]);
+  }, []);
 
-  // console.log(url);
-  // console.log(likes);
-
-  const handleLike = url => {
-    addLike(url);
-    const event = new Event('my-event');
-    dispatch(event);
+  const handleLike = (url, likes) => {
+    const count = likes + 1;
+    addLike(url, count);
+    setLikes(count);
+    // const event = new Event('my-event');
+    // dispatch(event);
   };
 
   return (
     <Styled styles={styles}>
       <div className="like" onClick={() => handleLike(url, likes)}>
-        <span className="number">{ likes }</span>
-        <span role="img" aria-label="claps" className="claps">👏</span>
+        {
+          likes && (
+            <>
+              <span className="number">{ likes }</span>
+              <span role="img" aria-label="claps" className="claps">👏</span>
+            </>
+          )
+        }
       </div>
     </Styled>
   );
