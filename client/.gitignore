@@ -1,3 +1,6 @@
 .env
 /node_modules
+<<<<<<< HEAD
 /build
+=======
+>>>>>>> b4205b3... Move folder to work better with firebase configuration

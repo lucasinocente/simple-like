@@ -7,7 +7,7 @@ import styles from './App.css';
 const buildUrl = ({ location }) => {
   const { host, pathname } = location;
   const url = `${host}${pathname}`
-  return url.replace(/\//g, "");
+  return url.replace('//', '-').replace('/', '-');
 }
 
 const loadLikes = async (url, setLikes) => {
@@ -24,7 +24,7 @@ const addLike = async (url, count) => {
 }
 
 const App = () => {
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState();
   const url = buildUrl(window);
 
   useEffect( () => {
@@ -40,10 +40,14 @@ const App = () => {
   return (
     <Styled styles={styles}>
       <div className="simple-like">
-        <div className="like" onClick={() => handleLike(url, likes)}>
-          <span className="number">{ likes }</span>
-          <span role="img" aria-label="claps" className="claps">👏</span>
-        </div>
+        {
+          likes && (
+            <div className="like" onClick={() => handleLike(url, likes)}>
+              <span className="number">{ likes }</span>
+              <span role="img" aria-label="claps" className="claps">👏</span>
+            </div>
+          )
+        }
       </div>
     </Styled>
   );
