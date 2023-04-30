@@ -10,11 +10,11 @@
     "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
-    "direflow-component": "2.1.1",
+    "direflow-component": "3.5.5",
     "firebase": "^7.8.0",
     "react": "16.10.2",
     "react-dom": "16.10.2",
-    "react-scripts": "^3.3.1"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "jest-environment-jsdom-fourteen": "0.1.0",
